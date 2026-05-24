@@ -49,6 +49,18 @@ L.tileLayer('./tiles/{z}/{x}/{y}.png', {
     maxZoom: 21
 }).addTo(map);
 
+
+// =======================
+// 📍 Marker + Popup
+// =======================
+
+L.marker([44.728471, -79.793717]).addTo(map)
+    .bindPopup(`
+        <b>Hi, I'm Luc!</b><br><br>
+        This imagery was captured using a DJI Mini 2 drone and processed using
+        MapsMadeEasy and WebODM to create an accurate, seamless orthophoto.
+    `);
+
 </script>
 
 </body>

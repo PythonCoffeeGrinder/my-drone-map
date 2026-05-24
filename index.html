@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Drone Orthomosaic</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet/dist/leaflet.css"
+    />
+
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        #map {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<div id="map"></div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<script>
+
+var map = L.map('map', {
+    crs: L.CRS.EPSG3857
+}).setView([44.5, -79.7], 18);
+
+// Optional basemap
+L.tileLayer(
+    'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+    {
+        attribution: '&copy; OpenStreetMap contributors'
+    }
+).addTo(map);
+
+// Your drone imagery
+L.tileLayer('./tiles/{z}/{x}/{y}.png', {
+    tms: false,
+    maxZoom: 22
+}).addTo(map);
+
+</script>
+
+</body>
+</html>

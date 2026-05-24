@@ -33,7 +33,7 @@
 
 var map = L.map('map', {
     crs: L.CRS.EPSG3857
-}).setView([44.5, -79.7], 18);
+}).setView([44.729122, -79.794876], 18);
 
 // Optional basemap
 L.tileLayer(
@@ -46,7 +46,7 @@ L.tileLayer(
 // Your drone imagery
 L.tileLayer('./tiles/{z}/{x}/{y}.png', {
     tms: false,
-    maxZoom: 22
+    maxZoom: 21
 }).addTo(map);
 
 </script>
